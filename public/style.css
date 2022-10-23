@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, 'sans-serif';
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.app {
+    max-width: 1924px;
+    margin: auto;
+}
+
+.activeBtn {
+    color: #3AC4B0;
+}
+
+.title {
+    color: #36434F;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.message {
+    color: #dc2424;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 50px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+.btn {
+    padding: 7px 15px;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.navbar {
+    display: flex;
+    padding: 15px 10px;
+    background-color: #36434F;
+}
+
+.navbar a {
+    margin-right: 10px;
+    transition: color .3s ease;
+}
+
+.navbar a:hover {
+    color: #3AC4B0;
+}
+
+.app__products {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.app__product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.app__products img {
+    display: block;
+    width: 130px;
+    height: 155px;
+}
+
+.product-title {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #36434F;
+}
+
+.product-price {
+    margin: 10px 0px;
+    font-weight: bold;
+    color: #36434F;
+}
+
+.cart-count {
+    margin: 0px 10px;
+    color: #000;
+}
+
+
+.btn-increase {
+    background-color: #293344;
+}
+
+.btn-add {
+    background-color: #293344;
+    border-radius: 3px;
+}
+
+.btn-decrease {
+    background-color: #c7a52b;
+}
+
+.app__cart {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.app__cart img {
+    display: block;
+    width: 80px;
+    height: 90px;
+    margin: auto;
+}
+
+
+.app__cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px 0px;
+}
+
+.cart-image {
+    flex: 0 0 14%;
+}
+
+.cart-title {
+    text-align: center;
+    flex: 0 0 25%;
+}
+
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 0 15%;
+}
+
+.cart-delete {
+    background-color: #dc2424;
+}
+
+.cart-price{
+    text-align: center;
+    flex: 0 0 10%;
+}
