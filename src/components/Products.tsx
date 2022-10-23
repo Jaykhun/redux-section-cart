@@ -1,15 +1,16 @@
 import React, {useState} from 'react';
-import {ProductsProps} from "../store/type";
-import {useDispatch} from "react-redux";
+import {initialState, ProductsProps} from "../store/type";
+import {useDispatch, useSelector} from "react-redux";
 import {addProduct} from "../store/actions";
 
 const Products: React.FC<ProductsProps> = ({product}) => {
     const {title, image, price, id, count} = product
-    const [add, setAdd] = useState(false)
+    const products = useSelector<initialState, initialState>(products => products)
     const dispatch = useDispatch()
+    const productExist = products.filter(product => product.id === id)
 
     const onAdd = () => {
-        if (!add) {
+        if (productExist.length < 1) {
             dispatch(addProduct({
                     id: id,
                     title: title,
@@ -18,7 +19,6 @@ const Products: React.FC<ProductsProps> = ({product}) => {
                     count: count,
                 })
             )
-            setAdd(true)
         } else alert('The Product already added')
 
     }
@@ -28,7 +28,10 @@ const Products: React.FC<ProductsProps> = ({product}) => {
             <p className="product-title">{title}</p>
             <img src={image} alt={title}/>
             <p className="product-price">{price}$</p>
-            <button className="btn-add btn" onClick={onAdd}>{add ? 'Product added' : 'Add to cart'}</button>
+            <button className="btn-add btn"
+                    onClick={onAdd}>
+                {productExist.length > 0 ? 'Product added' : 'Add to cart'}
+            </button>
         </div>
     );
 };
