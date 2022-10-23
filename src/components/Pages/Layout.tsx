@@ -1,6 +1,9 @@
 import {NavLink, Outlet} from "react-router-dom";
+import {useSelector} from "react-redux";
+import {initialState} from "../../store/type";
 
 const Layout = () => {
+    const products = useSelector<initialState, initialState>(products => products)
     return (
         <div className="app">
             <ul className="navbar">
@@ -13,7 +16,7 @@ const Layout = () => {
                 <li className="navbar__item">
                     <NavLink
                         className={({isActive}) => isActive ? 'activeBtn' : ''}
-                        to="cart">Cart
+                        to="cart">Cart (added {products.length} products)
                     </NavLink>
                 </li>
             </ul>
